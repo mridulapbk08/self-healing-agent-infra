@@ -6,8 +6,7 @@ Self-Healing Agent Infrastructure is a distributed workflow orchestration platfo
 
 Built using Golang, Redis, PostgreSQL, Docker, and Next.js, the system combines distributed task processing, durable queues, configurable recovery strategies, benchmarking, and real-time monitoring to demonstrate self-healing behavior in distributed environments.
 
-Experimental evaluation processed over **620 workflow executions**, achieving an **84.52% workflow success rate** while automatically recovering **239 failed executions** through self-healing recovery mechanisms.
-
+Experimental evaluation covers 20 benchmark runs of 100 workflows each. Automated recovery raises workflow completion from 44.8% to 84.4% against a no-recovery baseline. The three recovery strategies are statistically indistinguishable from one another on success rate under the failure model used in these runs.
 ---
 
 ## Technologies Used
@@ -312,10 +311,8 @@ The platform was evaluated under identical fault-injection conditions using mult
 
 ### Key Findings
 
-* Fixed Retry achieved the highest workflow success rate at 89%.
-* Self-healing mechanisms improved workflow completion rates from 41% to 89%.
+* Self-healing mechanisms improved workflow completion from 44.8% to 84.4% over a no-recovery baseline.
 * Fixed Retry automatically recovered 44 failed workflows.
-* Exponential Backoff reduced retry pressure while maintaining an 84% success rate.
 * The platform automatically recovered 239 workflow failures across 620 executions.
 * Results demonstrate the effectiveness of automated recovery strategies in distributed workflow orchestration systems.
 
